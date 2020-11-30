@@ -8,8 +8,9 @@ import java.util.Arrays;
 public class MapDecorator extends SmartArrayDecorator {
     public MapDecorator(SmartArray array, MyFunction function) {
         super(array);
-        Object[] result = Arrays.stream(elements).map(function::apply)
+        Object[] result = Arrays.stream(array.toArray()).map(function::apply)
                 .toArray();
+        elements = result.clone();
 
 
     }

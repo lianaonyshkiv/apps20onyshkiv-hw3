@@ -9,8 +9,9 @@ public class SortDecorator extends SmartArrayDecorator {
 
     public SortDecorator(SmartArray array, MyComparator comparator) {
         super(array);
-        Object[] result = Arrays.stream(elements).sorted(comparator)
+        Object[] result = Arrays.stream(array.toArray()).sorted(comparator)
                 .toArray();
+        elements = result.clone();
     }
 
     @Override

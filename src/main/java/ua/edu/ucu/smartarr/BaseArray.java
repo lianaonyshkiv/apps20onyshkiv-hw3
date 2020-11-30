@@ -1,18 +1,15 @@
 package ua.edu.ucu.smartarr;
 
 // Base array for decorators
-public class BaseArray implements SmartArray{
+public class BaseArray implements SmartArray {
     private Object[] elements;
-    private int length;
 
     public BaseArray() {
-        elements = new Object[0];
-        length = 0;
+        this.elements = new Object[0];
     }
 
     public BaseArray(Object[] array) {
-        elements = array.clone();
-        length = array.length;
+        this.elements = array.clone();
     }
 
     @Override
@@ -27,6 +24,6 @@ public class BaseArray implements SmartArray{
 
     @Override
     public int size() {
-        return length;
+        return elements.length;
     }
 }
